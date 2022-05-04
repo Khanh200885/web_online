@@ -18,23 +18,7 @@
             $this->slider = $this->ModelAdmin("slidermodel");
             $this->ordermodel=$this->ModelAdmin("ordermodel");
             
-            if(isset($_COOKIE["user"])){
-                $cookie = $_COOKIE["user"];
-                $result = $this->commonmodel->GetCookie($cookie,$this->table);
-                if($result < 1){
-                    header("location:".base."login/admin");
-                }
-            }else{
-                header("location:".base."login/admin");
-            }
-            
-        }
-
-        function error404(){
-            $data = [];
-            $this->ViewAdmin("error404",$data);
-        }
-
+          
        
         function home(){
             $countallorder = $this->homemodel->CountAllOrder();
